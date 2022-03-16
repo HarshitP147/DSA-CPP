@@ -1,6 +1,7 @@
 # DSA-CPP
-## All Codes of Data Structures and Algorithms written in C++
+### All Codes of Data Structures and Algorithms written in C++
 
+Greetings!!
 
 This is a repository created by me (Harshit Pandit) that contains all Algorithms or codes written in C++.
 
