@@ -9,5 +9,5 @@ I will try to update this as much as possible as I will further learn more in Da
 
 This can also be helpful to you too in some or the other way.
 
-All of the codes are written in C++ programming language as I believe for Data Structures and Algorithms this is the language to learn and master Data Structures and Algorithms.
+All of the codes are written in C++ programming language as I believe for Data Structures and Algorithms this is the best language to learn Data Structures and Algorithms.
 
