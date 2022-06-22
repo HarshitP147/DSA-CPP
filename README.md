@@ -11,3 +11,7 @@ This can also be helpful to you too in some or the other way.
 
 All of the codes are written in C++ programming language as I believe for Data Structures and Algorithms this is the best language to learn Data Structures and Algorithms.
 
+In case you find some errors or see some wrong code then add a pull request for changes.
+
+
+<h3> Thank you <h3>
