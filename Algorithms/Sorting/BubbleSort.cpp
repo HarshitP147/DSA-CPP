@@ -13,6 +13,30 @@ void dispArr(int arr[],int n){
 	}
 }
 
+void bubble_sort(char flag,int arr[],int n){
+	for(int i=0;i<n-1;++i){
+		for(int j=i;j<n;j++){
+			switch (flag){
+				case 'a':
+					if(arr[i]>arr[j]){
+						int temp = arr[j];
+						arr[j] = arr[i];
+						arr[i] = temp;
+					}	
+					break;
+
+				case 'd':
+					if(arr[i]<arr[j]){
+						int temp = arr[j];
+						arr[j] = arr[i];
+						arr[i] = temp;
+					}
+					break;
+			}
+		}
+	}
+}
+
 int main(){
 	// implementing bubble sort algorithm in C++
 	int len;
@@ -22,19 +46,19 @@ int main(){
 		cout << "Enter element:";cin >> arr[i];
 	}
 
+	char f ;
+	cout << "Enter whether to sort in ascending order or descending order:";
+	cin >> f;
+
+
 	cout << "Array before sorting :" << endl;
 	dispArr(arr,len);
 
-	// sorting the array using bubble sort
-	for(int i=0;i<len-1;++i){
-		if(arr[i]>arr[i+1]){
-			int temp = arr[i]; // temporary value for swapping 
-			arr[i] = arr[i+1];
-			arr[i+1] = temp;
-		}
-	}
+	bubble_sort(f,arr,len);
 
 	cout << "Array after bubble sort:" << endl;
 	dispArr(arr,len);
+
+
 	return 0;
 }
