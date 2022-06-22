@@ -14,4 +14,3 @@ All of the codes are written in C++ programming language as I believe for Data S
 In case you find some errors or see some wrong code then add a pull request for changes.
 
 
-<h3> Thank you <h3>
