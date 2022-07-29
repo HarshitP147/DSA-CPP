@@ -13,25 +13,14 @@ void dispArr(int arr[],int n){
 	}
 }
 
-void bubble_sort(char flag,int arr[],int n){
+void bubble_sort(int arr[],int n){
 	for(int i=0;i<n-1;++i){
 		for(int j=i;j<n;j++){
-			switch (flag){
-				case 'a':
-					if(arr[i]>arr[j]){
-						int temp = arr[j];
-						arr[j] = arr[i];
-						arr[i] = temp;
-					}	
-					break;
-
-				case 'd':
-					if(arr[i]<arr[j]){
-						int temp = arr[j];
-						arr[j] = arr[i];
-						arr[i] = temp;
-					}
-					break;
+				if(arr[i]>arr[j]){
+					int temp = arr[j];
+					arr[j] = arr[i];
+					arr[i] = temp;
+				}
 			}
 		}
 	}
@@ -46,15 +35,12 @@ int main(){
 		cout << "Enter element:";cin >> arr[i];
 	}
 
-	char f ;
-	cout << "Enter whether to sort in ascending order or descending order:";
-	cin >> f;
-
+	
 
 	cout << "Array before sorting :" << endl;
 	dispArr(arr,len);
 
-	bubble_sort(f,arr,len);
+	bubble_sort(arr,len);
 
 	cout << "Array after bubble sort:" << endl;
 	dispArr(arr,len);

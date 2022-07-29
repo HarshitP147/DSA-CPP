@@ -13,7 +13,7 @@ void dispArr(int arr[],int n){
 	}
 }
 
-void selection_sort(char flag,int arr[],int len){
+void selection_sort(int arr[],int len){
 	for(int i=0;i<len-1;i++){
 		int min = arr[i],max=arr[i],min_pos=i,max_pos=i;
 		for(int j=i+1;j<len;j++){
@@ -28,22 +28,11 @@ void selection_sort(char flag,int arr[],int len){
 			}
 		}
 		// now accessing element and swapping
-		switch (flag){
-			case 'a':
-				if(arr[i]>arr[min_pos]){
-					int temp = arr[min_pos];
-					arr[min_pos] = arr[i];
-					arr[i] = temp;
-				}
-				break;
-			case 'd':
-				if(arr[i]<arr[max_pos]){
-					int temp = arr[max_pos];
-					arr[max_pos] = arr[i];
-					arr[i] = temp;
-				}
-				break;
-		}
+			if(arr[i]>arr[min_pos]){
+				int temp = arr[min_pos];
+				arr[min_pos] = arr[i];
+				arr[i] = temp;
+			}
 	}
 }
 
@@ -56,10 +45,6 @@ int main(){
 		cout << "Enter element:";
 		cin >> arr[i];
 	}
-
-	char f;
-	cout << "Enter whether to sort in ascending order or descending order:";
-	cin >> f;
 
 	cout << "Array before selection sort:" << endl;
 	dispArr(arr,len);
