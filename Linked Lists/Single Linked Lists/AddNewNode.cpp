@@ -12,8 +12,6 @@ node *addNewNode(){
 	cout << endl;
 	cout << "Enter the name:";
 	cin >> temp->name;
-	cout << "Enter the age:";
-	cin >> temp->age;
 
 	return temp;
 }
@@ -42,6 +40,17 @@ void addNodePos(node *start,int &count,int pos){
 	btwNode->next = countinue;  // btwNode points to the further list
 
 	traversal->next = btwNode; // the previous list points to the present node added
+}
+
+void displayLinkedList(node *start,int count){
+    node *display = start;
+
+    int x = count;
+    while(x--){
+        cout << "Node name:" << display->name << endl;
+        display = display->next;
+    }
+    cout << endl;
 }
 
 
@@ -74,7 +83,7 @@ int main(){
         count++;
     }
     // now that we have the entire list let's ask the user where we want to add the new node
-
+    cout << endl;
     int pos;
     cout << "Enter where you want to add the new node:";
     cin >> pos;
@@ -85,7 +94,7 @@ int main(){
         firstNode = addNewNode();
 
         firstNode->next = start;
-        start = first;
+        start = firstNode;
         count++;
     }
     if(pos>count){
@@ -101,8 +110,10 @@ int main(){
         // if we want to add the node somewhere in btw the linked list
         pos--;
         addNodePos(start,count,pos);
-
     }
+
+    cout << "\nNew Linked list:" << endl;
+    displayLinkedList(start,count);
 
     return 0;
 }
