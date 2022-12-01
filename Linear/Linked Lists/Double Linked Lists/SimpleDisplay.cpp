@@ -9,7 +9,7 @@ struct node{
 
 int main(){
     node *list;
-    list = NULL;
+    list = nullptr;
 
     node *start;
     int count = 0;
@@ -24,10 +24,10 @@ int main(){
         cout << "Enter node value:" ;
         cin >> temp->val;
 
-        if(list==NULL){
+        if(list==nullptr){
             list = temp;
             start = temp;
-            list->prev = NULL;
+            list->prev = nullptr;
         } else{
             list->next = temp;
             temp->prev = list;

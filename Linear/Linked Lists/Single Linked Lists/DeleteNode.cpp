@@ -78,7 +78,7 @@ void deleteNodePos(node *start,int pos){
 
 int main(){
 	node *list;
-	list = NULL;
+	list = nullptr;
 	int count =0;
 
 	node *start;
@@ -101,7 +101,7 @@ int main(){
 				node *temp;
 				temp = addNewNode();
 
-				if(list==NULL){
+				if(list==nullptr){
 					list = temp;
 					start = temp;
 				} else{

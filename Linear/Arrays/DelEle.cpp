@@ -1,17 +1,7 @@
 #include <iostream>
+#include "./displayArray.h"
 using namespace std;
 
-void dispArr(int arr[],int n){
-	cout << '{';
-	for(int i=0;i<n;i++){
-		if(i==n-1){
-			cout << arr[i] << '}' << endl;
-		}
-		else{
-			cout << arr[i] << ',';
-		}
-	}
-}
 
 int main(){
 	// Algorithm to delete an element from an array in C++
@@ -22,7 +12,7 @@ int main(){
 		cout << "Enter element:";cin >> arr[i];
 	}	
 	cout << "Array created as:" << endl;
-	dispArr(arr,len);
+	displayArray(arr,len);
 
 	int pos;
 	cout << "Enter the index of the element to be deleted:";cin >> pos;
@@ -31,6 +21,6 @@ int main(){
 	}
 	len--;
 	cout << "Element deleted as:" << endl;
-	dispArr(arr,len);
+	displayArray(arr,len);
 	return 0;
 }

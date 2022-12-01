@@ -9,7 +9,7 @@ struct node{
 int main(){
     // Program to simply enter and display a linked list
     node *list;
-    list = NULL;
+    list = nullptr;
     
     int count = 0; // variable to keep track of number of nodes in the list
 
@@ -28,7 +28,7 @@ int main(){
         cout << "Enter the node value:";
         cin >> temp->val;
 
-        if(list==NULL){
+        if(list==nullptr){
             start = temp;
             list = temp;
         }

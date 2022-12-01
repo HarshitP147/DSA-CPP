@@ -22,7 +22,7 @@ void displayLinkedList(node *start,int count){
 
 int main(){
     node *list;
-    list = NULL;
+    list = nullptr;
 
     node *start;
     int count = 0;
@@ -37,10 +37,10 @@ int main(){
         cout << "Enter node name:" ;
         cin >> temp->name;
 
-        if(list==NULL){
+        if(list==nullptr){
             list = temp;
             start = temp;
-            list->prev = NULL;
+            list->prev = nullptr;
         } else{
             list->next = temp;
             temp->prev = list;
@@ -58,8 +58,8 @@ int main(){
 
 	rev = rev->next;
 
-	start->next = NULL;
-	rev->prev = NULL; 
+	start->next = nullptr;
+	rev->prev = nullptr; 
 	// start is now isolated from the linked list
 
 	// now reversing from the main linked list

@@ -25,7 +25,7 @@ int main(){
     cin >> n;
 
     node *list;
-    list = NULL;
+    list = nullptr;
 
     node *start;
 
@@ -35,7 +35,7 @@ int main(){
         cout << "Enter node name:";
         cin >> temp->name;
 
-        if(list==NULL){
+        if(list==nullptr){
             start = temp;
             list = temp;
         }
@@ -48,7 +48,7 @@ int main(){
     cout << "Original linked list:" << endl;
     node *display;
     display = start;
-    while(display!=NULL){
+    while(display!=nullptr){
         cout << "Node name:" << display->name << endl;
         display = display->next;
     }
@@ -58,10 +58,10 @@ int main(){
     rev = start;
 
     start = start->next;
-    rev->next = NULL;
+    rev->next = nullptr;
 
     node *temp;
-    while(start!=NULL){
+    while(start!=nullptr){
         temp = start;
         start = start->next;
         temp->next = rev;
@@ -71,7 +71,7 @@ int main(){
     cout << endl;
     cout << "Reversed linked list:" << endl;
     display = rev;
-    while(display!=NULL){
+    while(display!=nullptr){
         cout << "Node name:" << display->name << endl;
         display = display->next;
     }

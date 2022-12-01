@@ -57,7 +57,7 @@ void displayLinkedList(node *start,int count){
 int main(){
     // program to add a new node into a specific position of the linked list
     node *list;
-    list = NULL;
+    list = nullptr;
 
     node *start;
     int count = 0;
@@ -72,7 +72,7 @@ int main(){
         cout << "Enter node name:";
         cin >> temp->name;
 
-        if(list==NULL){
+        if(list==nullptr){
             list = temp;
             start = temp;
         }

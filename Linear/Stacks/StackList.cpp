@@ -6,7 +6,7 @@ using namespace std;
 struct node{
 	string name;
 	node *next;
-} *top = NULL;
+} *top = nullptr;
 
 
 void push(){
@@ -16,9 +16,9 @@ void push(){
 	cin >> nName;
 	newNode->name = nName;
 
-	newNode->next = NULL;
+	newNode->next = nullptr;
 
-	if(top==NULL){
+	if(top==nullptr){
 		top = newNode;
 	} else{
 		newNode->next = top;
@@ -31,7 +31,7 @@ void pop(){
 	delNode = top;
 	top = top->next;
 
-	delNode->next = NULL;
+	delNode->next = nullptr;
 
 	cout << "Deleting node with node name:" << delNode->name << endl;
 
@@ -41,7 +41,7 @@ void pop(){
 void displayStackList(){
 	node *display = top;
 
-	while(top!=NULL){
+	while(top!=nullptr){
 		cout << "Node name:" << top->name << endl;
 		top = top->next;
 	}
@@ -71,7 +71,7 @@ int main(){
 				break;
 
 			case 2:
-				if(top==NULL){
+				if(top==nullptr){
 					cout << "Stack underflow, cannot delete any nodes !!" << endl;
 				} else{
 					pop();
@@ -79,7 +79,7 @@ int main(){
 				break;
 
 			case 3:
-				if(top==NULL){
+				if(top==nullptr){
 					cout << "Stack list is empty" << endl;
 				} else{
 					cout << "Top node with the name:" << top->name << endl;
@@ -87,7 +87,7 @@ int main(){
 				break;
 
 			case 4:
-				if(top==NULL){
+				if(top==nullptr){
 					cout << "Stack list is empty, no nodes to display!!" << endl;
 				} else{
 					displayStackList();

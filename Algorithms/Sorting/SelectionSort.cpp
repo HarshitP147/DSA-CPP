@@ -1,19 +1,9 @@
 #include <iostream>
+#include "displayArray.h"
 using namespace std;
 
-void dispArr(int arr[],int n){
-	cout << '[';
-	for(int i=0;i<n;++i){
-		if(i==n-1){
-			cout << arr[i] << ']' << endl;
-		}
-		else{
-			cout << arr[i] << ',';
-		}
-	}
-}
 
-void selection_sort(int arr[],int len){
+void selectionSort(int arr[],int len){
 	for(int i=0;i<len-1;i++){
 		int min = arr[i],max=arr[i],min_pos=i,max_pos=i;
 		for(int j=i+1;j<len;j++){
@@ -47,12 +37,12 @@ int main(){
 	}
 
 	cout << "Array before selection sort:" << endl;
-	dispArr(arr,len);
+	displayArray(arr,len);
 
-	selection_sort(f,arr,len);
+	selectionSort(arr,len);
 
 	cout << "Array after selection sort:" << endl;
-	dispArr(arr,len);
+	displayArray(arr,len);
 	
 
 	return 0;

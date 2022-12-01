@@ -1,17 +1,7 @@
 #include <iostream>
+#include "./displayArray.h"
 using namespace std;
 
-void dispArr(int arr[],int n){
-	cout << '{';
-	for(int i=0;i<n;i++){
-		if(i==n-1){
-			cout << arr[i] << '}' << endl;
-		}
-		else{
-			cout << arr[i] << ',';
-		}
-	}
-}
 
 int main(){
 	// Algorithm to add an element in an array in C++ 
@@ -24,7 +14,7 @@ int main(){
 	}
 
 	cout << "Array created as :" << endl;
-	dispArr(arr,len);
+	displayArray(arr,len);
 
 	int ele,pos;
 	cout << "Enter the element to be added:";cin >> ele;
@@ -35,6 +25,6 @@ int main(){
 	}
 	arr[pos] = ele;
 	cout << "Element added as:" << endl;
-	dispArr(arr,len);
+	displayArray(arr,len);
 	return 0;
 }

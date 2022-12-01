@@ -1,19 +1,9 @@
 #include <iostream>
+#include "displayArray.h"
 using namespace std;
 
-void dispArr(int arr[],int n){
-	cout << '[';
-	for(int i=0;i<n;++i){
-		if(i==n-1){
-			cout << arr[i] << ']' << endl;
-		}
-		else{
-			cout << arr[i] << ',';
-		}
-	}
-}
 
-void bubble_sort(int arr[],int n){
+void bubbleSort(int arr[],int n){
 	for(int i=0;i<n-1;++i){
 		for(int j=i;j<n;j++){
 				if(arr[i]>arr[j]){
@@ -23,7 +13,6 @@ void bubble_sort(int arr[],int n){
 				}
 			}
 		}
-	}
 }
 
 int main(){
@@ -37,13 +26,13 @@ int main(){
 
 	
 
-	cout << "Array before sorting :" << endl;
-	dispArr(arr,len);
+	cout << "Array before bubble sort:" << endl;
+	displayArray(arr,len);
 
-	bubble_sort(arr,len);
+	bubbleSort(arr,len);
 
 	cout << "Array after bubble sort:" << endl;
-	dispArr(arr,len);
+	displayArray(arr,len);
 
 
 	return 0;

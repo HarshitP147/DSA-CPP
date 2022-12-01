@@ -1,17 +1,6 @@
 #include <iostream>
+#include "./displayArray.h"
 using namespace std;
-
-void dispArr(int arr[],int n){
-	cout << '[';
-	for(int i=0;i<n;++i){
-		if(i==n-1){
-			cout << arr[i] << ']' << endl;
-		}
-		else{
-			cout << arr[i] << ',';
-		}
-	}
-}
 
 
 int main(){
@@ -26,7 +15,7 @@ int main(){
 	}
 
 	cout << "Original array:" << endl;
-	dispArr(arr,len);
+	displayArray(arr,len);
 	cout << endl;
 
 	for(int i=0;i<len/2;i++){
@@ -37,7 +26,7 @@ int main(){
 	}
 
 	cout << "Reversed array:" << endl;
-    dispArr(arr,len);
+    displayArray(arr,len);
 	cout << endl;
 
 

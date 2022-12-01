@@ -40,7 +40,7 @@ void addNodePos(node *start,node *temp,int pos){
 
 int main(){
     node *list;
-    list = NULL;
+    list = nullptr;
 
     int count=0;
     node *start;
@@ -55,8 +55,8 @@ int main(){
         cout << "Enter node name:";
         cin >> temp->name ;
 
-        temp->next = NULL;
-        if(list==NULL){
+        temp->next = nullptr;
+        if(list==nullptr){
             list = temp;
             start = temp;
         } else{
@@ -89,7 +89,7 @@ int main(){
     } else if(pos>count){
         // add at the end
         count++;
-        if(list==NULL){
+        if(list==nullptr){
             list = temp;
             start = temp;
         } else{

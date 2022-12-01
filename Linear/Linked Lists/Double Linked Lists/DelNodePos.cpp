@@ -22,7 +22,7 @@ void displayLinkedList(node *start,int count){
 int main(){
 	// program to delete a node in a double linked list in one position
 	node *list;
-	list = NULL;
+	list = nullptr;
 	
 	int count=0;
 	node *start;
@@ -37,7 +37,7 @@ int main(){
 		cout << "Enter node name:";
 		cin >> temp->name ;
 
-		if(list==NULL){
+		if(list==nullptr){
 			list = temp;
 			start = temp;
 		} else{
@@ -60,12 +60,12 @@ int main(){
 	if(pos==1){
 		// delete the first node
 		start = start->next;
-		start->prev = NULL;
+		start->prev = nullptr;
 		count--;
 	} else if(pos>count){
 		// delete the last node
 		list = list->prev;
-		list->next = NULL;
+		list->next = nullptr;
 		count--;
 	} else{
 		// delete the node at the specified position

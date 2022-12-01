@@ -1,13 +1,6 @@
 #include <bits/stdc++.h>
+#include "./displayArray.h"
 using namespace std;
-
-void dispArr(int arr[],int len){
-    printf("{%d,",arr[0]);
-    for(int i=1;i<len-1;i++){
-        printf("%d,",arr[i]);
-    }
-    printf("%d}\n",arr[len-1]);
-}
 
 
 int main(){
@@ -57,7 +50,7 @@ int main(){
         len--;
     }
 
-    dispArr(arr,len);
+    displayArray(arr,len);
 
     cout << endl;
 
