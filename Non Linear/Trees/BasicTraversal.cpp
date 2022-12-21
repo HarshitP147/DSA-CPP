@@ -7,7 +7,7 @@ struct node{
 	node *right;
 };
 
-node *createBinaryTree(){
+node *createTree(){
 	int data;
 	cout << "Enter node data:";
 	cin >> data;
@@ -19,52 +19,46 @@ node *createBinaryTree(){
 	node *root = new node;
 	root->data = data;
 
-	root->left = createBinaryTree();
-	root->right = createBinaryTree();
+	root->left = createTree();
+	root->right = createTree();
 
 	return root;
 }
 
 void inOrderTraversal(node *root){
-	if(root==nullptr || root==NULL){
-		return;
+	if(root!=nullptr){
+		inOrderTraversal(root->left);
+		cout << root->data << " " ;
+		inOrderTraversal(root->right);
 	}
-
-	inOrderTraversal(root->left);
-	cout << root->data << " " ;
-	inOrderTraversal(root->right);
 }
 
 void preOrderTraversal(node *root){
-	if(root==nullptr || root==NULL){
-		return;
+	if(root!=nullptr){
+		cout << root->data << " ";
+		preOrderTraversal(root->left);
+		preOrderTraversal(root->right);
 	}
-
-	cout << root->data << " ";
-	preOrderTraversal(root->left);
-	preOrderTraversal(root->right);
 }
 
 void postOrderTraversal(node *root){
-	if(root==nullptr || root==NULL){
-		return;
+	if(root!=nullptr){
+		postOrderTraversal(root->left);
+		postOrderTraversal(root->right);
+		cout << root->data <<  " " ;
 	}
-
-	postOrderTraversal(root->left);
-	postOrderTraversal(root->right);
-	cout << root->data <<  " " ;
 }
 
 
 int main(){
 	// implementing binary trees with three basic traversals in C++
 	
-	node *root;  // creating a root node for the binary tree
-	root = createBinaryTree();
+	node *root = NULL;  // creating a root node for the binary tree
+	root = createTree();
 
 	cout << endl;
 	int choice;
-	cout << "Enter which type of tree traversal you want to display:";
+	cout << "Enter which type of tree traversal you want to display:" << endl;
 	cout << "1. In-Order Traversal" << endl;
 	cout << "2. Pre-Order Traversal" << endl;
 	cout << "3. Post-Order Traversal" << endl;
