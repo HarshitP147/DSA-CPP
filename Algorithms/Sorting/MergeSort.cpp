@@ -14,8 +14,8 @@ void merge(int arr[],int mid,int left,int right){
 		arr1[i] = arr[left+i];
 	}
 
-	for(int i=0;i<n2;i++){
-		arr2[i] = arr[mid+i+1];
+	for(int j=0;j<n2;j++){
+		arr2[j] = arr[j+mid+1];
 	}
 
 	// now merge the two arrays accordingly to sort the function
@@ -23,7 +23,8 @@ void merge(int arr[],int mid,int left,int right){
 	while(i!=n1 && j!=n2){
 		if(arr1[i]<arr2[j]){
 			arr[k] = arr1[i++];
-		} else{
+		} 
+		else{
 			arr[k] = arr2[j++];
 		}
 		k++;
