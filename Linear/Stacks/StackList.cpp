@@ -50,6 +50,7 @@ void displayStackList(){
 
 
 int main(){
+	// stacks using linked lists
 	int count = 0;
 	bool running = true;
 
