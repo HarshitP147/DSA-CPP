@@ -5,7 +5,8 @@ using namespace std;
 int main(){
 	// Linear Search Algorithm in C++
 	int len;
-	cout << "Enter the length of the array:";cin >> len;
+	cout << "Enter the length of the array:";
+	cin >> len;
 
 	int arr[len];
 	for(int i=0;i<len;i++){

@@ -49,6 +49,41 @@ void postOrderTraversal(node *root){
 	}
 }
 
+int treeHeight(node *root){
+	if(root==nullptr){
+		return 0;
+	}
+	else{
+		// find the height of the left and right side
+		int leftHeight = treeHeight(root->left);
+		int rightHeight = treeHeight(root->right);
+
+		int maxHeight = leftHeight > rightHeight ? leftHeight : rightHeight;  // find and return the max height of the tree
+
+		return maxHeight+1;
+	}
+}
+
+void printLevel(node *root,int level){
+	if(root==nullptr){
+		return;
+	}
+	if(level==0){
+		cout << root->data << " " ;
+	}
+	else{
+		printLevel(root->left,level-1);
+		printLevel(root->right,level-1);
+	}
+}
+
+void levelOrderTraversal(node *root){
+	int height = treeHeight(root);
+	for(int i=0;i<height;i++){
+		printLevel(root,i);
+	}
+	cout << endl;
+}
 
 int main(){
 	// implementing binary trees with three basic traversals in C++
@@ -62,6 +97,7 @@ int main(){
 	cout << "1. In-Order Traversal" << endl;
 	cout << "2. Pre-Order Traversal" << endl;
 	cout << "3. Post-Order Traversal" << endl;
+	cout << "4. Level-Order Traversal" << endl;
 	cout << "*. In Order Traversal" << endl;
 	cout << "Enter your choice:";
 	cin >> choice;
@@ -78,6 +114,10 @@ int main(){
 	
 		case 3:
 			postOrderTraversal(root);
+			break;
+
+		case 4:
+			levelOrderTraversal(root);
 			break;
 
 		default:
