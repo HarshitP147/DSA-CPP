@@ -1,25 +1,26 @@
 #include <iostream>
-#include <math.h>
 using namespace std;
-
-#define COUNT 10
 
 struct node{
 	int value;
 	node *left;
 	node *right;
+
+	node(){}
 };
 
 node *createTree(){
-	int value;
+	int val;
 	cout << "Enter node value:";
-	cin >> value;
-	if(value==-1){
+	cin >> val;
+
+	if(val==-1){
 		return nullptr;
 	}
 
 	node *root = new node;
-	root->value = value;
+
+	root->value = val;
 
 	root->left = createTree();
 	root->right = createTree();
@@ -27,37 +28,33 @@ node *createTree(){
 	return root;
 }
 
-// this is basically inOrderTraversal on a better format 
-void prettyPrintTree(node *root,int space){
-	if(root==nullptr || root==NULL){
+void treePrettyPrint(node *root,string prefix = "",bool isRight = false){
+	if(root==nullptr){
+		cout << "Empty tree" << endl;
 		return;
 	}
 
-	// increase the distance between levels
-	space+=COUNT;
-
-	// process the right child
-	prettyPrintTree(root->right,space);
-
-	cout << endl;
-	for(int i=COUNT;i<space;i++){
-		cout << " ";
+	if(root->right){
+		treePrettyPrint(root->right,prefix+(isRight ? "    " : "│   "),true);
 	}
-	cout << root->value << endl;
 
-	// process the left child
-	prettyPrintTree(root->left,space);
+	cout << prefix + (isRight ? "┌── " : "└── ")  << to_string(root->value) << '\n';
+	
+	if(root->left){
+		treePrettyPrint(root->left,prefix+(isRight ? "│   " : "    "),false);
+	}
 }
 
 int main(){
-	// fun C++ program to pretty print the tree in the terminal	
-	node *root ;
-	cout << "Root of the tree created, enter -1 to terminate the tree" << endl;
+	// C++ program to pretty print a tree
+	// Original code taken from Leetcode website
+
+	node *root;
+	cout << "Root node created. Enter value as -1 as the null value." << endl;
+
 	root = createTree();
-	cout << endl;
 
-	prettyPrintTree(root,0);
-
+	treePrettyPrint(root);
 
 	return 0;
 }

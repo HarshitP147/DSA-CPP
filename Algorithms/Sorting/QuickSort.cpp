@@ -1,16 +1,13 @@
 #include <iostream>
+#include <climits>
 #include "./displayArray.h"
 using namespace std;
-
-
-#define MAX_ELE 2147483647  // this is for int
 
 void swap(int &x,int &y){
 	int temp = x;
 	x = y;
 	y = temp;
 }
-
 
 int partition(int arr[],int left,int right){
 	int pivot = arr[left];
@@ -63,7 +60,7 @@ int main(){
 	displayArray(arr,len);
 
 	len++;
-	arr[len-1] = MAX_ELE;
+	arr[len-1] = INT_MAX;
 	quickSort(arr,0,len-1);
 	len--;
 
