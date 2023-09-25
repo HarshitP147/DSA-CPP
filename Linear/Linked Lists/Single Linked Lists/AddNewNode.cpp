@@ -42,6 +42,7 @@ void addNodePos(node *start,int &count,int pos){
 	traversal->next = btwNode; // the previous list points to the present node added
 }
 
+
 void displayLinkedList(node *start,int count){
     node *display = start;
 

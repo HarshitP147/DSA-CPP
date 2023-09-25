@@ -16,8 +16,6 @@ int main(){
     node *start;   // one node pointer that points to the start
     // this could've named as head also
 
-
-
     int len;
     cout << "Enter the number of nodes you want:";
     cin >> len;

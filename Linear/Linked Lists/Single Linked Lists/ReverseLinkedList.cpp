@@ -60,7 +60,6 @@ int main(){
     start = start->next;
     rev->next = nullptr;
 
-    node *temp;
     while(start!=nullptr){
         temp = start;
         start = start->next;
@@ -75,12 +74,6 @@ int main(){
         cout << "Node name:" << display->name << endl;
         display = display->next;
     }
-
-
-
-
-
-
 
 
     return 0;
